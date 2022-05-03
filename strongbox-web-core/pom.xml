@@ -8,12 +8,12 @@
     <parent>
         <groupId>org.carlspring.strongbox</groupId>
         <artifactId>strongbox-parent</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0-issues-1649-steve-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
     <artifactId>strongbox-web-core</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-issues-1649-steve-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Strongbox: Web Core</name>
@@ -59,6 +59,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables>
+                        <strongbox.home>${project.build.directory}/strongbox</strongbox.home>
+                    </systemPropertyVariables>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -91,7 +96,7 @@
                                 <artifactItem>
                                     <groupId>${project.groupId}</groupId>
                                     <artifactId>strongbox-web-ui</artifactId>
-                                    <version>${project.version}</version>
+                                    <version>1.0-SNAPSHOT</version>
                                     <type>zip</type>
 
                                     <overWrite>true</overWrite>
@@ -142,32 +147,32 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-commons</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-data-service</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-authentication-registry</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-default-authentication-provider</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.carlspring.strongbox</groupId>
             <artifactId>strongbox-ldap-authentication-provider</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-ldap-authentication-provider</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
@@ -175,7 +180,7 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-cron-api</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
@@ -183,60 +188,60 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-storage-api</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-storage-maven-layout-provider</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-storage-maven-layout-provider</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-storage-nuget-layout-provider</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-storage-npm-layout-provider</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-storage-npm-layout-provider</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
             <type>test-jar</type>
-            <scope>test</scope>            
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-storage-nuget-layout-provider</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-storage-pypi-layout-provider</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-storage-pypi-layout-provider</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-storage-raw-layout-provider</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -246,72 +251,72 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-client</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-web-forms</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-rest-client</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-rest-client</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-testing-web</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-storage-api-resources</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-common-resources</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-testing-core</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-testing-core</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-storage-api</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-aql</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-issues-1649-steve-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>strongbox-web-ui</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-SNAPSHOT</version>
             <type>zip</type>
         </dependency>
 
@@ -361,7 +366,7 @@
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm-analysis</artifactId>
         </dependency>
-        
+
         <!-- Spring security dependencies -->
         <dependency>
             <groupId>org.springframework.security</groupId>
@@ -381,6 +386,15 @@
             <artifactId>spring-mock-mvc</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-path</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>xml-path</artifactId>
+        </dependency>
+
 
         <!-- Serialization and data format dependencies -->
         <dependency>
@@ -427,7 +441,7 @@
             <groupId>io.reactivex.rxjava2</groupId>
             <artifactId>rxjava</artifactId>
         </dependency>
-        
+
         <!-- Other utils: swagger, .. -->
         <dependency>
             <groupId>io.swagger</groupId>
@@ -452,12 +466,6 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest</artifactId>
-            <version>${version.hamcrest}</version>
-            <scope>test</scope>
-        </dependency>
 
         <dependency>
             <groupId>com.unboundid</groupId>
@@ -472,7 +480,7 @@
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
         </dependency>
-        
+
         <dependency>
             <groupId>javax.transaction</groupId>
             <artifactId>javax.transaction-api</artifactId>
@@ -508,4 +516,61 @@
 
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>jdk-default</id>
+            <activation>
+                <jdk>!11</jdk>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <configuration>
+                            <jvmArguments>
+                                -Xmx1024m
+                            </jvmArguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>jdk11</id>
+            <activation>
+                <jdk>11</jdk>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <configuration>
+                            <jvmArguments>
+                                -Xmx1024m
+                                -Djdk.attach.allowAttachSelf=true
+                                --add-exports java.base/jdk.internal.misc=ALL-UNNAMED
+                                --add-exports java.base/jdk.internal.ref=ALL-UNNAMED
+                                --add-exports java.base/sun.nio.ch=ALL-UNNAMED
+                                --add-exports java.management.rmi/com.sun.jmx.remote.internal.rmi=ALL-UNNAMED
+                                --add-exports java.rmi/sun.rmi.registry=ALL-UNNAMED
+                                --add-exports java.rmi/sun.rmi.server=ALL-UNNAMED
+                                --add-exports java.sql/java.sql=ALL-UNNAMED
+
+                                --add-opens java.base/java.lang.module=ALL-UNNAMED
+                                --add-opens java.base/jdk.internal.loader=ALL-UNNAMED
+                                --add-opens java.base/jdk.internal.ref=ALL-UNNAMED
+                                --add-opens java.base/jdk.internal.reflect=ALL-UNNAMED
+                                --add-opens java.base/jdk.internal.math=ALL-UNNAMED
+                                --add-opens java.base/jdk.internal.module=ALL-UNNAMED
+                                --add-opens java.base/jdk.internal.util.jar=ALL-UNNAMED
+                                --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
+                            </jvmArguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

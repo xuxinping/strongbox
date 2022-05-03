@@ -1,11 +1,18 @@
 package org.carlspring.strongbox.users.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import java.util.stream.Collectors;
+import org.carlspring.strongbox.domain.User;
+import org.carlspring.strongbox.domain.SecurityRole;
+import org.carlspring.strongbox.domain.SecurityRoleEntity;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author mtodorov
@@ -18,16 +25,21 @@ public class UserDto
 
     private String password;
 
-    private boolean enabled = true;
+    private Boolean enabled = true;
 
     private Set<String> roles = new HashSet<>();
 
     private String securityTokenKey;
 
-    @JsonIgnore
-    private Date lastUpdate;
+    private LocalDateTime lastUpdate;
 
     private String sourceId;
+
+    @Override
+    public String getUuid()
+    {
+        return getUsername();
+    }
 
     @Override
     public String getUsername()
@@ -52,16 +64,37 @@ public class UserDto
     }
 
     @Override
-    public Set<String> getRoles()
+    @JsonIgnore
+    public Set<SecurityRole> getRoles()
     {
-        return roles;
+        return roles != null ? roles.stream()
+                                    .map(role -> new SecurityRoleEntity(role))
+                                    .collect(Collectors.toSet())
+                             : new HashSet<>();
     }
 
-    public void setRoles(Set<String> roles)
+    public void setRoles(Set<SecurityRole> roles)
+    {
+        if (roles == null)
+        {
+            this.roles = new HashSet<>();
+            return;
+        }
+        this.roles = roles.stream().map(SecurityRole::getRoleName).collect(Collectors.toSet());
+    }
+
+    public void setRoleNames(Set<String> roles)
     {
         this.roles = roles != null ? new HashSet<>(roles) : new HashSet<>();
     }
 
+    @JsonProperty("roles")
+    public Set<String> getRoleNames()
+    {
+        return Collections.unmodifiableSet(roles);
+    }
+
+    
     public void addRole(String role)
     {
         roles.add(role);
@@ -69,10 +102,15 @@ public class UserDto
 
     public void removeRole(String role)
     {
+        removeRole(new SecurityRoleEntity(role));
+    }
+
+    public void removeRole(SecurityRole role)
+    {
         roles.remove(role);
     }
 
-    public boolean hasRole(String role)
+    public boolean hasRole(SecurityRole role)
     {
         return roles.contains(role);
     }
@@ -89,29 +127,30 @@ public class UserDto
     }
 
     @Override
-    public boolean isEnabled()
+    public Boolean isEnabled()
     {
         return enabled;
     }
 
-    public void setEnabled(final boolean enabled)
+    public void setEnabled(final Boolean enabled)
     {
         this.enabled = enabled;
     }
 
-
     @Override
-    public Date getLastUpdate()
+    @JsonIgnore
+    public LocalDateTime getLastUpdated()
     {
         return lastUpdate;
     }
 
-    public void setLastUpdate(Date lastUpdate)
+    public void setLastUpdate(LocalDateTime lastUpdate)
     {
         this.lastUpdate = lastUpdate;
     }
 
     @Override
+    @JsonIgnore
     public String getSourceId()
     {
         return sourceId;
